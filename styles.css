@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Raleway", sans-serif;
     background-color: #ffff;
     margin: 0;
     padding: 20px;
@@ -174,15 +174,15 @@ body {
 
 /* Mood colors */
 .happy {
-    background-color: #ffeb3b;
+    background-color: #FF78FF;
 }
 
 .sad {
-    background-color: #2196f3;
+    background-color: #6072FF;
 }
 
 .neutral {
-    background-color: #9e9e9e;
+    background-color: #8860FF;
 }
 
 .angry {
@@ -190,7 +190,7 @@ body {
 }
 
 .excited {
-    background-color: #ff5722;
+    background-color: #C26CFF;
 }
 
 /* Chart Navigation Styles */
@@ -263,6 +263,62 @@ canvas {
 
 .dark-mode .animated-title {
     color: #A98CFF;
+    animation: none;
+    margin-bottom: 0px;
 }
 
-/* Adjust other elements as needed for dark mode */
+/* Hide the text by default */
+#at-night {
+    display: none;
+    opacity: 0;
+    transition: opacity 2s;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Dark mode specific styles */
+.dark-mode #at-night {
+    display: block;
+    font-family: "Bungee Outline";
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: fadeIn 3s forwards, flicker 1.5s infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #FFD6FF,
+            0 0 80px #FFD6FF,
+            0 0 90px #FFD6FF,
+            0 0 100px #E8C7FF,
+            0 0 150px #E8C7FF;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
