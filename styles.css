@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#app {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Month Navigation Styles */
+#month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#month-navigation button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#month-navigation button:hover {
+    background-color: #45a049;
+}
+
+#current-month {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* Calendar Styles */
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.day {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#day.selected {
+    border: 2px solid #000;
+}
+
+#mood-input {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#save-mood {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#save-mood:hover {
+    background-color: #45a049;
+}
+
+/* Mood colors */
+.happy {
+    background-color: #ffeb3b;
+}
+
+.sad {
+    background-color: #2196f3;
+}
+
+.neutral {
+    background-color: #9e9e9e;
+}
+
+.angry {
+    background-color: #f44336;
+}
+
+.excited {
+    background-color: #ff5722;
+}
+
+/* Chart Styles */
+#chart-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
