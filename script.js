@@ -4,7 +4,15 @@ const saveMoodButton = document.getElementById('save-mood');
 const prevMonthButton = document.getElementById('prev-month');
 const nextMonthButton = document.getElementById('next-month');
 const currentMonthDisplay = document.getElementById('current-month');
-const moodChartCanvas = document.getElementById('mood-chart');
+const barChartCanvas = document.getElementById('bar-chart');
+const lineChartCanvas = document.getElementById('line-chart');
+const pieChartCanvas = document.getElementById('pie-chart');
+const barChartButton = document.getElementById('bar-chart-btn');
+const lineChartButton = document.getElementById('line-chart-btn');
+const pieChartButton = document.getElementById('pie-chart-btn');
+const startTrackingButton = document.getElementById('start-tracking');
+const openingScreen = document.getElementById('opening-screen');
+const app = document.getElementById('app');
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -46,7 +54,7 @@ function updateCalendar() {
         calendar.appendChild(day);
     }
 
-    updateChart(moods, daysInMonth);
+    updateCharts(moods, daysInMonth);
 }
 
 saveMoodButton.addEventListener('click', () => {
@@ -67,7 +75,7 @@ saveMoodButton.addEventListener('click', () => {
     selectedDay.classList.remove('selected');
     selectedDay = null;
 
-    updateChart(moods, new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate());
+    updateCharts(moods, new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate());
 });
 
 prevMonthButton.addEventListener('click', () => {
@@ -80,7 +88,25 @@ nextMonthButton.addEventListener('click', () => {
     updateCalendar();
 });
 
-function updateChart(moods, daysInMonth) {
+barChartButton.addEventListener('click', () => {
+    barChartCanvas.style.display = 'block';
+    lineChartCanvas.style.display = 'none';
+    pieChartCanvas.style.display = 'none';
+});
+
+lineChartButton.addEventListener('click', () => {
+    barChartCanvas.style.display = 'none';
+    lineChartCanvas.style.display = 'block';
+    pieChartCanvas.style.display = 'none';
+});
+
+pieChartButton.addEventListener('click', () => {
+    barChartCanvas.style.display = 'none';
+    lineChartCanvas.style.display = 'none';
+    pieChartCanvas.style.display = 'block';
+});
+
+function updateCharts(moods, daysInMonth) {
     const moodCounts = {
         happy: 0,
         sad: 0,
@@ -104,28 +130,90 @@ function updateChart(moods, daysInMonth) {
         }]
     };
 
-    if (moodChart) {
-        moodChart.destroy();
+    if (barChart) {
+        barChart.destroy();
     }
 
-    moodChart = new Chart(moodChartCanvas, {
+    if (lineChart) {
+        lineChart.destroy();
+    }
+
+    if (pieChart) {
+        pieChart.destroy();
+    }
+
+    const commonOptions = {
+        responsive: true,
+        plugins: {
+            tooltip: {
+                enabled: true,
+                callbacks: {
+                    label: function (context) {
+                        return `${context.label}: ${context.raw}`;
+                    }
+                }
+            },
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: ''
+            }
+        },
+        hover: {
+            mode: 'nearest',
+            intersect: true
+        },
+        animation: {
+            duration: 1000,
+            easing: 'easeOutBounce'
+        }
+    };
+
+    barChart = new Chart(barChartCanvas, {
         type: 'bar',
         data: chartData,
         options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Mood Distribution'
-                }
+            ...commonOptions,
+            title: {
+                display: true,
+                text: 'Mood Distribution - Bar Chart'
+            }
+        }
+    });
+
+    lineChart = new Chart(lineChartCanvas, {
+        type: 'line',
+        data: chartData,
+        options: {
+            ...commonOptions,
+            title: {
+                display: true,
+                text: 'Mood Distribution - Line Chart'
+            }
+        }
+    });
+
+    pieChart = new Chart(pieChartCanvas, {
+        type: 'pie',
+        data: chartData,
+        options: {
+            ...commonOptions,
+            title: {
+                display: true,
+                text: 'Mood Distribution - Pie Chart'
             }
         }
     });
 }
 
-let moodChart;
+let barChart, lineChart, pieChart;
 
 updateCalendar();
+
+// Handle transition from opening screen to main app content
+startTrackingButton.addEventListener('click', () => {
+    openingScreen.style.display = 'none';
+    app.style.display = 'block';
+});
