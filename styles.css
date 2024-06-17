@@ -84,6 +84,13 @@ body {
     margin-top: 10px;
 }
 
+/*Text*/
+.hero-text {
+    font-size: 80px;
+    font-family: "Luckiest Guy";
+    margin-top: 10px;
+}
+
 /* Month Navigation Styles */
 #month-navigation {
     display: flex;
@@ -241,8 +248,8 @@ canvas {
 
 /* Dark Mode Styles */
 .dark-mode {
-    background-color: #333;
-    color: #f0f8ff;
+    background-color: #000E2C;
+    color: #E8C7FF;
 }
 
 .dark-mode #app {
@@ -250,7 +257,12 @@ canvas {
 }
 
 .dark-mode #opening-screen {
-    background-color: #333;
+    background-color: #000E2C;
+    color: #E8C7FF;
+}
+
+.dark-mode .animated-title {
+    color: #A98CFF;
 }
 
 /* Adjust other elements as needed for dark mode */
