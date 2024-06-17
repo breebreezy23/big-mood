@@ -24,15 +24,16 @@
         </div>
         <button id="start-tracking">Start Tracking</button>
     </div>
+
     <div id="app" style="display: none">
-        <!-- Add this toggle button in your HTML -->
         <button id="dark-mode-toggle">Dark Mode</button>
-        <h1>Big Mood</h1>
+        <h1 class="hero-text">Big Mood</h1>
         <div id="month-navigation">
             <button id="prev-month">&lt;</button>
             <span id="current-month"></span>
             <button id="next-month">&gt;</button>
         </div>
+
         <div id="calendar"></div>
         <div id="mood-input">
             <label for="mood">Select your mood:</label>
@@ -45,11 +46,13 @@
             </select>
             <button id="save-mood">Save Mood</button>
         </div>
+
         <div id="chart-navigation">
             <button id="bar-chart-btn">Bar Chart</button>
             <button id="line-chart-btn">Line Chart</button>
             <button id="pie-chart-btn">Pie Chart</button>
         </div>
+
         <div id="chart-container">
             <canvas id="bar-chart"></canvas>
             <canvas id="line-chart" style="display: none;"></canvas>
