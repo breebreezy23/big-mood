@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Big Mood</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Mood Tracker</h1>
+        <div id="month-navigation">
+            <button id="prev-month">&lt;</button>
+            <span id="current-month"></span>
+            <button id="next-month">&gt;</button>
+        </div>
+        <div id="calendar"></div>
+        <div id="mood-input">
+            <label for="mood">Select your mood:</label>
+            <select id="mood">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="neutral">Neutral</option>
+                <option value="angry">Angry</option>
+                <option value="excited">Excited</option>
+            </select>
+            <button id="save-mood">Save Mood</button>
+        </div>
+        <div id="chart-container">
+            <canvas id="mood-chart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
