@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #ffff;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -24,14 +24,20 @@ body {
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: #f0f8ff;
+    background-color: #ffd6ff;
 }
 
 .animated-title {
     font-size: 10em;
     font-family: "luckiest guy";
-    color: #4caf50;
+    color: #c8b6ff;
     animation: bounce 1s infinite;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 @keyframes bounce {
@@ -56,18 +62,27 @@ body {
 #start-tracking {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4caf50;
-    color: white;
+    background-color: #bbd0ff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 #start-tracking:hover {
-    background-color: #45a049;
+    background-color: #b8c0ff;
 }
 
+.opening-text {
+    font-size: 20px;
+    font-family: "Raleway";
+    margin-top: 10px;
+}
 
 /* Month Navigation Styles */
 #month-navigation {
@@ -80,15 +95,20 @@ body {
 #month-navigation button {
     padding: 5px 10px;
     font-size: 16px;
-    background-color: #4caf50;
-    color: white;
+    background-color: #bbd0ff;
+    color: black;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 8px;
+    box-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 #month-navigation button:hover {
-    background-color: #45a049;
+    background-color: #b8c0ff;
 }
 
 #current-month {
@@ -111,7 +131,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 1px solid #c8b6ff;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -130,10 +150,15 @@ body {
 
 #save-mood {
     padding: 5px 10px;
-    background-color: #4caf50;
-    color: white;
+    background-color: #e7c6ff;
+    color: black;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    box-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 #save-mood:hover {
@@ -173,10 +198,15 @@ body {
 #chart-navigation button {
     padding: 5px 10px;
     font-size: 16px;
-    background-color: #4caf50;
-    color: white;
+    background-color: #bbd0ff;
+    color: black;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    box-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 #chart-navigation button:hover {
@@ -194,3 +224,33 @@ canvas {
     display: block;
     margin: 0 auto;
 }
+
+/* Add these styles to your CSS */
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f0f8ff;
+    color: #000;
+    border: 2px solid #000;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #333;
+    color: #f0f8ff;
+}
+
+.dark-mode #app {
+    color: #f0f8ff;
+}
+
+.dark-mode #opening-screen {
+    background-color: #333;
+}
+
+/* Adjust other elements as needed for dark mode */
