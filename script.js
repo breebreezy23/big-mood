@@ -57,6 +57,23 @@ function updateCalendar() {
     updateCharts(moods, daysInMonth);
 }
 
+// JavaScript to toggle dark mode
+document.getElementById('dark-mode-toggle').addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+
+    // Optional: Save the dark mode state in localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
+});
+
+// Optional: Check localStorage to apply dark mode if previously selected by the user
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+}
+
 saveMoodButton.addEventListener('click', () => {
     if (!selectedDay) {
         alert('Please select a day.');
