@@ -15,6 +15,50 @@ body {
     max-width: 600px;
 }
 
+/* Opening Screen Styles */
+#opening-screen {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f8ff;
+}
+
+.animated-title {
+    font-size: 3em;
+    color: #4caf50;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#start-tracking {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#start-tracking:hover {
+    background-color: #45a049;
+}
+
+
 /* Month Navigation Styles */
 #month-navigation {
     display: flex;
@@ -107,9 +151,36 @@ body {
     background-color: #ff5722;
 }
 
+/* Chart Navigation Styles */
+#chart-navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#chart-navigation button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#chart-navigation button:hover {
+    background-color: #45a049;
+}
+
 /* Chart Styles */
 #chart-container {
     margin-top: 20px;
     width: 100%;
     max-width: 600px;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
 }
