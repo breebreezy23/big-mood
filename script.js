@@ -58,7 +58,7 @@ function updateCalendar() {
 }
 
 // JavaScript to toggle dark mode
-document.getElementById('dark-mode-toggle').addEventListener('click', function () {
+/*document.getElementById('dark-mode-toggle').addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
 
     // Optional: Save the dark mode state in localStorage
@@ -78,6 +78,32 @@ document.addEventListener('DOMContentLoaded', function () {
             cloud.classList.toggle('cloud-hidden');
         });
     });
+}); */
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Assuming you have a function to check if dark mode is active
+    // This could be based on a class on the body or a localStorage value
+    const isDarkModeActive = () => document.body.classList.contains('dark-mode');
+
+    const updateCloudsVisibility = () => {
+        const clouds = document.querySelectorAll('.cloud');
+        clouds.forEach(cloud => {
+            if (isDarkModeActive()) {
+                cloud.classList.add('hidden'); // Assuming 'hidden' is a class that hides the element
+            } else {
+                cloud.classList.remove('hidden');
+            }
+        });
+    };
+
+    // Toggle dark mode and update clouds visibility
+    document.getElementById('dark-mode-toggle').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        updateCloudsVisibility(); // Update clouds visibility based on the new state
+    });
+
+    // Ensure clouds visibility is correct on page load
+    updateCloudsVisibility();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
