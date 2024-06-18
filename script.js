@@ -57,30 +57,6 @@ function updateCalendar() {
     updateCharts(moods, daysInMonth);
 }
 
-// JavaScript to toggle dark mode
-/*document.getElementById('dark-mode-toggle').addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-
-    // Optional: Save the dark mode state in localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
-    } else {
-        localStorage.setItem('darkMode', 'disabled');
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const clouds = document.querySelectorAll('.cloud-container1, .cloud-container2, .cloud-container3, .cloud-container4, .cloud-container5, .cloud-container6, .cloud-container7, .cloud-container8');
-
-    darkModeToggle.addEventListener('click', function () {
-        clouds.forEach(cloud => {
-            cloud.classList.toggle('cloud-hidden');
-        });
-    });
-}); */
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // Function to check if dark mode is active
     const isDarkModeActive = () => document.body.classList.contains('dark-mode');
