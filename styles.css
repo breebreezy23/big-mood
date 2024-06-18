@@ -94,7 +94,25 @@ body {
     margin-top: 10px;
 }
 
-.cloud-container {
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transform: translateY(-50%);
+    top: 25%;
+    position: relative;
+    /* This makes sure it takes the full viewport height */
+}
+
+/* Cloud Styles */
+
+/*.cloud-hidden {
+    visibility: hidden;
+}*/
+
+.cloud-container1 {
     position: relative;
     /* Establishes a positioning context */
     width: 100%;
@@ -102,19 +120,79 @@ body {
     height: 450px;
 }
 
-svg {
-    width: 100%;
-    height: auto;
+.cloud {
     position: absolute;
-    top: 10;
-    left: 10;
+    width: auto;
+    height: auto;
 }
 
-.cloud-container svg {
+/* Cloud Positions */
+#cloud-container1 {
+    top: 0;
+    right: 0;
+    /* Additional styling */
+}
+
+#cloud-container2 {
+    top: 50px;
+    /* Example positioning */
+    left: 50px;
+    /* Additional styling */
+}
+
+#cloud-container3 {
+    top: 100px;
+    /* Adjust the vertical position */
+    left: 40%;
+    /* Adjust the horizontal position */
+    /* Additional styling */
+}
+
+#cloud-container4 {
+    bottom: 50px;
+    /* Adjust the vertical position */
+    right: 40%;
+    /* Adjust the horizontal position */
+    /* Additional styling */
+}
+
+#cloud-container5 {
+    bottom: 0;
+    left: 0;
+    /* Additional styling */
+}
+
+#cloud-container6 {
+    bottom: 0;
+    right: 0;
+    /* Additional styling */
+}
+
+#cloud-container7 {
+    top: 350px;
+    left: 0;
+    /* Additional styling */
+}
+
+#cloud-container8 {
+    top: 500px;
+    right: 0;
+    /* Additional styling */
+}
+
+.cloud svg {
+    width: 100%;
+    height: auto;
+    position: relative;
+    /* Adjust if necessary */
+}
+
+
+.cloud-container1 svg {
     z-index: -1;
 }
 
-@keyframes moveClouds {
+/*@keyframes moveClouds {
     0% {
         transform: translateX(-100%);
         opacity: 0;
@@ -140,13 +218,13 @@ svg {
 
 /* Example variations for individual clouds */
 #cloud1 {
-    top: 20px;
-    left: 10%;
+    top: 0;
+    right: 0;
     animation-duration: 50s;
     animation-delay: 0s;
     /* Adjust as needed */
     transform: scale(0.3);
-    transform-origin: top left;
+    transform-origin: 10px, 10px;
     /* Adjust as needed */
     /* Makes cloud1 50% smaller */
 }
@@ -382,6 +460,10 @@ canvas {
     animation: fadeIn 3s forwards, flicker 1.5s infinite alternate;
 }
 
+.dark-mode .cloud-hidden {
+    visibility: hidden;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -419,51 +501,34 @@ canvas {
     }
 }
 
-/*.blob {
+.star {
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(180deg,
-            rgba(47, 184, 255, 0.42) 31.77%,
-            #5c9df1 100%);
-    mix-blend-mode: color-dodge;
-    -webkit-animation: move 25s infinite alternate;
-    animation: move 25s infinite alternate;
-    transition: 2s cubic-bezier(0.07, 0.8, 0.16, 1);
+    border-radius: 50%;
+    opacity: 0;
+    /* Start hidden */
+    transition: opacity 2s;
 }
 
-.blob:hover {
-    width: 520px;
-    height: 520px;
-    -webkit-filter: blur(30px);
-    filter: blur(30px);
-    box-shadow:
-        inset 0 0 0 5px rgba(255, 255, 255, 0.6),
-        inset 100px 100px 0 0px #fa709a,
-        inset 200px 200px 0 0px #784ba8,
-        inset 300px 300px 0 0px #2b86c5;
+/* Container for stars, assuming it overlays the clouds */
+.night-sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    /* Start hidden */
 }
 
-@-webkit-keyframes move {
-    from {
-        transform: translate(-100px, -50px) rotate(-90deg);
-        border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-    }
-
-    to {
-        transform: translate(500px, 100px) rotate(-10deg);
-        border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-    }
+/* Show stars in dark mode */
+.dark-mode .night-sky {
+    display: block;
 }
 
-@keyframes move {
-    from {
-        transform: translate(-100px, -50px) rotate(-90deg);
-        border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-    }
-
-    to {
-        transform: translate(500px, 100px) rotate(-10deg);
-        border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-    }
-} */
+.dark-mode .star {
+    opacity: 1;
+    /* Show stars */
+}
