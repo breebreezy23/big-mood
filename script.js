@@ -80,11 +80,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 }); */
 
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Assuming you have a function to check if dark mode is active
-    // This could be based on a class on the body or a localStorage value
+    // Function to check if dark mode is active
     const isDarkModeActive = () => document.body.classList.contains('dark-mode');
 
+    // Function to update clouds visibility based on dark mode state
     const updateCloudsVisibility = () => {
         const clouds = document.querySelectorAll('.cloud');
         clouds.forEach(cloud => {
@@ -96,25 +97,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
-    // Toggle dark mode and update clouds visibility
+    // Function to generate stars in the night sky
+    const generateStars = () => {
+        const nightSky = document.querySelector('.night-sky');
+        for (let i = 0; i < 100; i++) { // Generate 100 stars
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            nightSky.appendChild(star);
+        }
+    };
+
+    // Toggle dark mode, update clouds visibility, and change button text
     document.getElementById('dark-mode-toggle').addEventListener('click', function () {
         document.body.classList.toggle('dark-mode');
         updateCloudsVisibility(); // Update clouds visibility based on the new state
+        // Optionally, update the button text based on dark mode state
+        this.textContent = isDarkModeActive() ? 'Day Mode' : 'After Dark';
     });
 
-    // Ensure clouds visibility is correct on page load
+    // Initial setup: Generate stars, ensure clouds visibility is correct
+    generateStars();
     updateCloudsVisibility();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const nightSky = document.querySelector('.night-sky');
-    for (let i = 0; i < 100; i++) { // Generate 100 stars
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.top = `${Math.random() * 100}%`;
-        star.style.left = `${Math.random() * 100}%`;
-        nightSky.appendChild(star);
-    }
 });
 
 // Optional: Check localStorage to apply dark mode if previously selected by the user
