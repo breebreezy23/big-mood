@@ -7,6 +7,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    /* Prevent scrolling */
+    height: 100vh;
+    /* Full viewport height */
+    width: 100vw;
+    /* Full viewport width */
 }
 
 #app {
@@ -25,6 +32,9 @@ body {
     height: 100vh;
     width: 100%;
     background-color: #ffd6ff;
+    position: relative;
+    /* This makes z-index applicable */
+    z-index: 3;
 }
 
 .animated-title {
@@ -82,6 +92,92 @@ body {
     font-size: 20px;
     font-family: "Raleway";
     margin-top: 10px;
+}
+
+.cloud-container {
+    position: relative;
+    /* Establishes a positioning context */
+    width: 100%;
+    /* Ensure the container spans the width of its parent */
+    height: 450px;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 10;
+    left: 10;
+}
+
+.cloud-container svg {
+    z-index: -1;
+}
+
+@keyframes moveClouds {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.cloud-container svg {
+    animation: moveClouds 60s linear infinite;
+}
+
+/* Example variations for individual clouds */
+#cloud1 {
+    top: 20px;
+    left: 10%;
+    animation-duration: 50s;
+    animation-delay: 0s;
+    /* Adjust as needed */
+    transform: scale(0.3);
+    transform-origin: top left;
+    /* Adjust as needed */
+    /* Makes cloud1 50% smaller */
+}
+
+#cloud2 {
+    top: 100px;
+    left: 20%;
+    animation-duration: 70s;
+    animation-delay: 10s;
+    transform: scale(0.4);
+    transform-origin: 50px 50px;
+    /* Makes cloud2 20% smaller */
+}
+
+#cloud3 {
+    top: 50px;
+    left: 30%;
+    animation-duration: 60s;
+    transform: scale(0.6);
+    transform-origin: center;
+    /* Makes cloud3 40% smaller */
+}
+
+#cloud4 {
+    top: 150px;
+    left: 40%;
+    animation-duration: 80s;
+    animation-delay: 20s;
+    transform: scale(0.7);
+    transform-origin: left 5px -3px;
+    /* Makes cloud4 30% smaller */
 }
 
 /*Text*/
@@ -322,3 +418,52 @@ canvas {
         text-shadow: none;
     }
 }
+
+/*.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(180deg,
+            rgba(47, 184, 255, 0.42) 31.77%,
+            #5c9df1 100%);
+    mix-blend-mode: color-dodge;
+    -webkit-animation: move 25s infinite alternate;
+    animation: move 25s infinite alternate;
+    transition: 2s cubic-bezier(0.07, 0.8, 0.16, 1);
+}
+
+.blob:hover {
+    width: 520px;
+    height: 520px;
+    -webkit-filter: blur(30px);
+    filter: blur(30px);
+    box-shadow:
+        inset 0 0 0 5px rgba(255, 255, 255, 0.6),
+        inset 100px 100px 0 0px #fa709a,
+        inset 200px 200px 0 0px #784ba8,
+        inset 300px 300px 0 0px #2b86c5;
+}
+
+@-webkit-keyframes move {
+    from {
+        transform: translate(-100px, -50px) rotate(-90deg);
+        border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+    }
+
+    to {
+        transform: translate(500px, 100px) rotate(-10deg);
+        border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translate(-100px, -50px) rotate(-90deg);
+        border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+    }
+
+    to {
+        transform: translate(500px, 100px) rotate(-10deg);
+        border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+    }
+} */
