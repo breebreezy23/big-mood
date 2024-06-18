@@ -69,6 +69,28 @@ document.getElementById('dark-mode-toggle').addEventListener('click', function (
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const clouds = document.querySelectorAll('.cloud-container1, .cloud-container2, .cloud-container3, .cloud-container4, .cloud-container5, .cloud-container6, .cloud-container7, .cloud-container8');
+
+    darkModeToggle.addEventListener('click', function () {
+        clouds.forEach(cloud => {
+            cloud.classList.toggle('cloud-hidden');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const nightSky = document.querySelector('.night-sky');
+    for (let i = 0; i < 100; i++) { // Generate 100 stars
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        nightSky.appendChild(star);
+    }
+});
+
 // Optional: Check localStorage to apply dark mode if previously selected by the user
 if (localStorage.getItem('darkMode') === 'enabled') {
     document.body.classList.add('dark-mode');
