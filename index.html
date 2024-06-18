@@ -22,15 +22,52 @@
 </head>
 
 <body>
-    <div id="opening-screen">
-        <!-- Add this toggle button in your HTML -->
-        <button id="dark-mode-toggle">Dark Mode</button>
-        <h1 class="animated-title">Big Mood</h1>
-        <div id="at-night">After Dark</div>
-        <div class="opening-text">
-            <p>Track your daily moods and visualize your mood trends over time.</p>
+    <div class="container" id="opening-screen">
+        <div class="cloud-container">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800">
+                <g fill="#b8c0ffff" stroke-width="9" stroke="#000000ff" id="cloud1">
+                    <path
+                        d="M 150 350 A  23 23 0 1 1 200 200 A  23 23 0 1 1 350 200 A  23 23 0 1 1 550 300 A  23 23 0 1 1 600 400 A  23 23 0 1 1 550 500 A  23 23 0 1 1 350 450 A  23 23 0 1 1 150 350 Z"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800">
+                <g fill="#b8c0ffff" stroke-width="9" stroke="#000000ff" id="cloud2">
+                    <path
+                        d="M 184.5549738219895 440.0523560209424 A  23 23 0 1 1 183.24607329842934 285.86387434554973 A  23 23 0 1 1 350 200 A  23 23 0 1 1 564.6596858638743 194.24083769633506 A  23 23 0 1 1 635.6020942408377 329.84293193717275 A  23 23 0 1 1 550 500 A  23 23 0 1 1 443.19371727748694 502.3560209424084 A  23 23 0 1 1 184.5549738219895 440.0523560209424 Z"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800">
+                <g fill="#b8c0ffff" stroke-width="9" stroke="#000000ff" id="cloud3">
+                    <path
+                        d="M 500 400 A  23 23 0 1 1 300 350 A  23 23 0 1 1 250 300 A  23 23 0 1 1 350 250 A  23 23 0 1 1 500 200 A  23 23 0 1 1 600 250 A  23 23 0 1 1 500 400 Z"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800">
+                <g fill="#b8c0ffff" stroke-width="9" stroke="#000000ff" id="cloud4">
+                    <path
+                        d="M 200 300 A  23 23 0 1 1 250 250 A  23 23 0 1 1 400 250 A  23 23 0 1 1 600 350 A  23 23 0 1 1 650 450 A  23 23 0 1 1 600 550 A  23 23 0 1 1 400 500 A  23 23 0 1 1 200 300 Z"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+            <button id="dark-mode-toggle">Dark Mode</button>
+            <h1 class="animated-title">Big Mood</h1>
+            <div id="at-night">After Dark</div>
+            <div class="opening-text">
+                <p>Track your daily moods and visualize your mood trends over time.</p>
+            </div>
+            <button id="start-tracking">Start Tracking</button>
         </div>
-        <button id="start-tracking">Start Tracking</button>
+
     </div>
 
     <div id="app" style="display: none">
