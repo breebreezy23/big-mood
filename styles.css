@@ -1,6 +1,5 @@
 body {
     font-family: "Raleway", sans-serif;
-    background-color: #ffff;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -9,17 +8,15 @@ body {
     flex-direction: column;
     padding: 0;
     overflow: hidden;
-    /* Prevent scrolling */
     height: 100vh;
-    /* Full viewport height */
     width: 100vw;
-    /* Full viewport width */
 }
 
 #app {
     text-align: center;
     width: 80%;
     max-width: 600px;
+    background-image: url('/images/app-background.jpg');
 }
 
 /* Opening Screen Styles */
