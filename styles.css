@@ -36,6 +36,7 @@ body {
     background-color: #fff;
     position: relative;
     border-radius: 8%;
+    border: #000 8px solid;
 }
 
 /* Opening Screen Styles */
@@ -303,7 +304,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #c8b6ff;
+    border: 2px solid #c8b6ff;
+    border-radius: 10%;
     cursor: pointer;
     transition: background-color 0.3s;
 }
