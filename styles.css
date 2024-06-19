@@ -1,10 +1,16 @@
 :root {
-    --background-image-light: url('./images/day-img.png');
-    --background-image-dark: url('./images/night-img.png');
+    --background-image: url('./images/day-img.png');
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-image: url('./images/night-img2.png');
+    }
+}
+
+
 body {
-    background-image: var(--background-image-light);
+    background-image: var(--background-image);
     font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 20px;
@@ -86,8 +92,7 @@ body {
     }
 }
 
-#start-tracking,
-#signup-button {
+#start-tracking {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #bbd0ff;
@@ -102,8 +107,7 @@ body {
         1px 1px 0 #000;
 }
 
-#start-tracking:hover,
-#signup-button:hover {
+#start-tracking:hover {
     background-color: #b8c0ff;
 }
 
@@ -246,43 +250,6 @@ body {
     transform: scale(0.7);
     transform-origin: left 5px -3px;
     /* Makes cloud4 30% smaller */
-}
-
-/* Sign-Up Screen Styles */
-#signup-screen {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background-color: #f0f8ff;
-}
-
-#signup-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#signup-form input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#signup-form button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#signup-form button:hover {
-    background-color: #45a049;
 }
 
 /*Text*/
@@ -453,14 +420,18 @@ canvas {
 }
 
 /* Dark Mode Styles */
+
+.dark-mode .body {
+    background-image: var(--background-image);
+}
+
 .dark-mode {
-    background-image: var(--background-image-dark);
     color: #E8C7FF;
 }
 
 .dark-mode #app {
     color: #f0f8ff;
-    background-color: #C9B8FF;
+    background-color: #0B002C;
 }
 
 .dark-mode #opening-screen {
@@ -474,7 +445,7 @@ canvas {
     margin-bottom: 0px;
 }
 
-/* Hide the text by default */
+/* After Dark Text */
 #at-night {
     display: none;
     opacity: 0;
@@ -483,7 +454,6 @@ canvas {
     color: #fff;
 }
 
-/* Dark mode specific styles */
 .dark-mode #at-night {
     display: block;
     font-family: "Bungee Outline";
@@ -584,13 +554,9 @@ canvas {
     transition: color 0.5s ease, background-color 0.5s ease, transform 0.5s ease;
 }
 
-/* Example dark mode styles */
 .dark-mode .opening-text,
 .dark-mode .content-container {
     color: #FFFFFF;
-    /* Assuming white text in dark mode */
-    /* Assuming a darker background in dark mode */
-    /* No change to transform here, but it's set to transition smoothly if changed */
 }
 
 .button-85 {
