@@ -1,4 +1,10 @@
+:root {
+    --background-image-light: url('./images/day-img.png');
+    --background-image-dark: url('./images/night-img.png');
+}
+
 body {
+    background-image: var(--background-image-light);
     font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 20px;
@@ -10,13 +16,26 @@ body {
     overflow: hidden;
     height: 100vh;
     width: 100vw;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (max-width: 768px) {
+    #calendar {
+        background-size: contain;
+        /* Adjusts the background size for screens narrower than 768px */
+    }
 }
 
 #app {
+    display: grid;
+    place-items: center;
     text-align: center;
     width: 80%;
     max-width: 600px;
-    background-image: url('/images/app-background.jpg');
+    background-color: #fff;
+    position: relative;
+    border-radius: 8%;
 }
 
 /* Opening Screen Styles */
@@ -272,6 +291,10 @@ body {
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     margin-top: 20px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
 }
 
 .day {
@@ -390,12 +413,13 @@ canvas {
 
 /* Dark Mode Styles */
 .dark-mode {
-    background-color: #000E2C;
+    background-image: var(--background-image-dark);
     color: #E8C7FF;
 }
 
 .dark-mode #app {
     color: #f0f8ff;
+    background-color: #C9B8FF;
 }
 
 .dark-mode #opening-screen {
