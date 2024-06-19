@@ -18,6 +18,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Big Mood</title>
 </head>
 
@@ -141,8 +145,19 @@
                 <p>Track your daily moods and visualize your mood trends over time.</p>
             </div>
             <button id="start-tracking">Start Tracking</button>
+            <button id="signup-button">Sign Up</button>
         </div>
     </div>
+
+    <div id="signup-screen" style="display: none;">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
 
     </div>
 
