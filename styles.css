@@ -256,7 +256,8 @@ body {
 .hero-text {
     font-size: 80px;
     font-family: "Luckiest Guy";
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 /* Month Navigation Styles */
@@ -457,10 +458,14 @@ canvas {
 .dark-mode #at-night {
     display: block;
     font-family: "Bungee Outline";
-    font-size: 40px;
+    font-size: 30px;
     margin-top: 0px;
     margin-bottom: 0px;
     animation: fadeIn 3s forwards, flicker 1.5s infinite alternate;
+}
+
+#at-night .app {
+    padding-top: 0%;
 }
 
 .dark-mode .cloud-hidden {
