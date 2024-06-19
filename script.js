@@ -98,10 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCloudsVisibility();
 });
 
-// Optional: Check localStorage to apply dark mode if previously selected by the user
-if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-}
 
 saveMoodButton.addEventListener('click', () => {
     if (!selectedDay) {
