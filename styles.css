@@ -573,6 +573,7 @@ canvas {
     -webkit-user-select: none;
     touch-action: manipulation;
     font-family: "Luckiest Guy";
+    font-size: 24px;
 }
 
 .button-85:before {
