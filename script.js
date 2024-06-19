@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.toggle('dark-mode');
         updateCloudsVisibility(); // Update clouds visibility based on the new state
         // Optionally, update the button text based on dark mode state
-        this.textContent = isDarkModeActive() ? 'Day Mode' : 'After Dark';
+        this.textContent = isDarkModeActive() ? '☼' : '☾';
     });
 
     // Initial setup: Generate stars, ensure clouds visibility is correct
