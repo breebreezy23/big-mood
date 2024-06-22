@@ -2,6 +2,10 @@
 
 Big Mood is a web application that allows users to log their daily mood and visualize mood trends using a color-coded calendar. Users can navigate between months to view past moods.
 
+## Demo
+
+[Demo Video](./images/demo.mp4)
+
 ## Features
 
 - Log daily mood with a simple mood selector.
