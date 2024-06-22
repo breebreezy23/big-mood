@@ -2,12 +2,6 @@
     --background-image: url('./images/day-img.png');
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-image: url('./images/night-img2.png');
-    }
-}
-
 
 body {
     background-image: var(--background-image);
@@ -260,6 +254,11 @@ body {
     margin-bottom: 0;
 }
 
+.hero-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Month Navigation Styles */
 #month-navigation {
     display: flex;
@@ -423,7 +422,7 @@ canvas {
 /* Dark Mode Styles */
 
 .dark-mode .body {
-    background-image: var(--background-image);
+    background-image: url('./images/night-img2.png');
 }
 
 .dark-mode {
