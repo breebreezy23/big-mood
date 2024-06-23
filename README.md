@@ -4,7 +4,7 @@ Big Mood is a web application that allows users to log their daily mood and visu
 
 ## Screenshots
 
-![App Screenshot](./images/app-screenshots/screenshot1.png)
+<img src="./images/app-screenshots/screenshot1.png" width="500" height="300">
 
 ## Features
 
