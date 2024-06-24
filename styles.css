@@ -31,8 +31,9 @@ body {
     display: grid;
     place-items: center;
     text-align: center;
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 800px;
+    height: auto;
     background-color: #fff;
     position: relative;
     border-radius: 8%;
@@ -427,6 +428,7 @@ canvas {
 
 .dark-mode {
     color: #E8C7FF;
+    background-image: url('./images/night-img2.png')
 }
 
 .dark-mode #app {
