@@ -1,5 +1,5 @@
 :root {
-    --background-image: url('./images/day-img.png');
+    --background-image: url('./images/day.img.jpg');
 }
 
 
@@ -423,12 +423,12 @@ canvas {
 /* Dark Mode Styles */
 
 .dark-mode .body {
-    background-image: url('./images/night-img2.png');
+    background-image: url('./images/night.img');
 }
 
 .dark-mode {
     color: #E8C7FF;
-    background-image: url('./images/night-img2.png')
+    background-image: url('./images/night.img')
 }
 
 .dark-mode #app {
