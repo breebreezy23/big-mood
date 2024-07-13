@@ -23,7 +23,6 @@ body {
 @media (max-width: 768px) {
     #calendar {
         background-size: contain;
-        /* Adjusts the background size for screens narrower than 768px */
     }
 }
 
@@ -51,7 +50,6 @@ body {
     width: 100%;
     background-color: #ffd6ff;
     position: relative;
-    /* This makes z-index applicable */
     z-index: 3;
 }
 
@@ -121,7 +119,6 @@ body {
     transform: translateY(-50%);
     top: 25%;
     position: relative;
-    /* This makes sure it takes the full viewport height */
 }
 
 /* Cloud Styles */
@@ -136,9 +133,7 @@ body {
 
 .cloud-container1 {
     position: relative;
-    /* Establishes a positioning context */
     width: 100%;
-    /* Ensure the container spans the width of its parent */
     height: 450px;
 }
 
@@ -152,61 +147,47 @@ body {
 #cloud-container1 {
     top: 0;
     right: 0;
-    /* Additional styling */
 }
 
 #cloud-container2 {
     top: 50px;
-    /* Example positioning */
     left: 50px;
-    /* Additional styling */
 }
 
 #cloud-container3 {
     top: 100px;
-    /* Adjust the vertical position */
     left: 40%;
-    /* Adjust the horizontal position */
-    /* Additional styling */
 }
 
 #cloud-container4 {
     bottom: 50px;
-    /* Adjust the vertical position */
     right: 40%;
-    /* Adjust the horizontal position */
-    /* Additional styling */
 }
 
 #cloud-container5 {
     bottom: 0;
     left: 0;
-    /* Additional styling */
 }
 
 #cloud-container6 {
     bottom: 0;
     right: 0;
-    /* Additional styling */
 }
 
 #cloud-container7 {
     top: 350px;
     left: 0;
-    /* Additional styling */
 }
 
 #cloud-container8 {
     top: 500px;
     right: 0;
-    /* Additional styling */
 }
 
 .cloud svg {
     width: 100%;
     height: auto;
     position: relative;
-    /* Adjust if necessary */
 }
 
 
@@ -217,11 +198,8 @@ body {
 #cloud1 {
     top: 0;
     right: 0;
-    /* Adjust as needed */
     transform: scale(0.3);
     transform-origin: 10px, 10px;
-    /* Adjust as needed */
-    /* Makes cloud1 50% smaller */
 }
 
 #cloud2 {
@@ -229,14 +207,12 @@ body {
     left: 20%;
     transform: scale(0.4);
     transform-origin: 50px 50px;
-    /* Makes cloud2 20% smaller */
 }
 
 #cloud3 {
     top: 50px;
     left: 30%;
     transform-origin: center;
-    /* Makes cloud3 40% smaller */
 }
 
 #cloud4 {
@@ -244,7 +220,6 @@ body {
     left: 40%;
     transform: scale(0.7);
     transform-origin: left 5px -3px;
-    /* Makes cloud4 30% smaller */
 }
 
 /*Text*/
@@ -406,8 +381,6 @@ canvas {
     margin: 0 auto;
 }
 
-/* Add these styles to your CSS */
-
 /* Dark Mode Toggle Button */
 #dark-mode-toggle {
     position: fixed;
@@ -529,11 +502,8 @@ canvas {
     right: 0;
     bottom: 0;
     display: none;
-    /* Start hidden */
     opacity: 0;
-    /* Start fully transparent */
     visibility: hidden;
-    /* Start hidden */
     transition: opacity 2s ease, visibility 2s ease;
 }
 
@@ -541,14 +511,12 @@ canvas {
 .dark-mode .night-sky {
     display: block;
     opacity: 1;
-    /* Fully visible */
     visibility: visible;
 }
 
 .dark-mode .star {
     opacity: 1;
     transition: opacity 2s ease;
-    /* Show stars */
 }
 
 /* Night Mode Transition */
